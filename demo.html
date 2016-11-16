@@ -1,0 +1,40 @@
+<html>
+
+<head>
+	<title>Introduction to React</title>
+
+	<!--The React library and ReactDOM code (for rendering to the html dom)-->
+	<script src="react.js"></script>
+	<script src="react-dom.js"></script>
+
+	<!--link to babel, which will process our code so it may run in the browser-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+
+	<!--bootstrap, a css styles library that will allow us to style our app quickly-->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+</head>
+
+<body>
+
+<!--the div where our React app will mount-->
+<div id="app"></div>
+
+<!--a script tag, marked to be interpreted by Babel, where our React code will go-->
+<script type="text/babel">
+	
+	var ExampleComponent = React.createClass({
+		render: function(){
+			console.log("in render function");
+			return (<div>
+						<h1>Hello, world!</h1>
+					</div>)
+		}
+	});
+
+	//call to the render method of ReactDOM, telling React to mount our root component to the "app" div
+	ReactDOM.render(<ExampleComponent/>, document.getElementById('app'));
+
+</script>
+
+</body>
+</html>
